@@ -28,6 +28,11 @@ var map = new google.maps.Map(document.getElementById('map'), {
         position: google.maps.ControlPosition.LEFT_BOTTOM
     }
 });
+
+ // Will let the user know when Google Maps fails to load.
+   function failedToLoad() {
+     $('#map').html("Google Maps Failed to Load");
+ };
 var infowindow = new google.maps.InfoWindow({
     maxWidth: 160
 });
@@ -54,44 +59,10 @@ for (var i = 0; i < locations.length; i++) {
     if (iconCounter >= iconsLength) {
         iconCounter = 0;
     }
-}
-//Binds for list of coffee shops
-//Will let the user know when Google Maps fails to load.
-//This does not work
-function failedToLoad() {
-    $('#map').html("Google Maps Failed to Load");
-}
 
-  $(function() {
-    var coffee = [
-      {name:"Red Rock Cafe"},
-      {name:"The Laughing Goat Coffeehouse"},
-      {name:"Trident Booksellers and Cafe"},
-	  {name:"Expresso Roma"},
-	  {name:"Ozo Cafe"},
-    ];
 
-    var viewModel = {
-      coffee: ko.observableArray(coffee),
 
-      query: ko.observable(''),
-
-      //This doesn't work through viewModel.query line
-      search: function(value) {
-        viewModel.coffee.removeAll();
-        for(var x in coffee) {
-          if(coffee[x].name.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
-            viewModel.coffee.push(coffee[x]);
-          }
-        }
-      }
-    };
-
-    viewModel.query.subscribe(viewModel.search);
-
-    ko.applyBindings(viewModel);
-  });
-  
+} 
  
 function b() {
                 var apiKey = '5222045741e8792041d7a9f8afc89168';
@@ -103,5 +74,37 @@ function b() {
                 function(data) {
                 $('#weather').html('Temp: ' + data.currently.temperature + ' ' + 'degrees');
                 });
-                }        
+                }  
+
+$(function() {
+    var shops = [
+      {name:"Red Rock Cafe"},
+      {name:"The Laughing Goat Coffeehouse"},
+      {name:"Trident Booksellers and Cafe"},
+    {name:"Expresso Roma"},
+    {name:"Ozo Cafe"},
+    ];
+
+    var viewModel = {
+      shops: ko.observableArray(shops),
+
+      query: ko.observable(''),
+
+      search: function(value) {
+        viewModel.shops.removeAll();
+        for(var x in shops) {
+          if(shops[x].name.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
+            viewModel.shops.push(shops[x]);
+          }
+        }
+      }
+    };
+
+    viewModel.query.subscribe(viewModel.search);
+
+    ko.applyBindings(viewModel);
+  });
+
+ 
+                      
                
