@@ -3,42 +3,48 @@
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <title> Neighborhood Map</title>
+        <title>
+            Neighborhood Map
+        </title>
         <link href="css/style.css" rel="stylesheet" type="text/css">
         <script src=
         "https://maps.googleapis.com/maps/api/js?key=AIzaSyCAP1_PSnaYWOB9hSMf6fJmgbM2truRhww"
         type="text/javascript"></script>
         <script src="js/jquery-1.11.2.min.js"></script>
-
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
-  <script src='http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js'></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/1.2.1/knockout-min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.tmpl.min.js"></script>
     </head>
     <body>
         <div id="container">
-            <div id="map"></div>
-            <div id="boulder">
-                <h1>Boulder Temperature</h1>
+            <div id="map">
             </div>
+
+            <div id="boulder">
+                <h1>
+                    Boulder Temperature
+                </h1>
+            </div>
+
             <div id="weather">
                 <button onclick="b()">Current Weather</button>
             </div>
+
             <div id="places">
                 <form action="#">
-      <input placeholder="Search…" type="search" name="q" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off">
-    </form>
-    <ul data-bind="template: {name:'coffee', foreach:shops}">
-    </ul>
-  </div>
+                    <input autocomplete="off" data-bind=
+                    "value: query, valueUpdate: 'keyup'" name="q" placeholder=
+                    "Search…" type="search">
+                </form>
 
-  <script type="text/html" id="coffee">
-    <li>
-      <strong data-bind="text: name"></strong> 
-    </li>
-  </script>
+                <ul data-bind="template: {name:'coffee', foreach:shops}">
+                </ul>
             </div>
+            <script id="coffee" type="text/html">
+            <li>
+            <strong data-bind="text: name"></strong> 
+            </li>
+            </script>
         </div>
-        
-        <script src="js/main.js"></script>
+        <script src="js/main.js"></script> <script src="js/knockout-min.js"></script>
     </body>
 </html>
