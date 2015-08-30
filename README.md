@@ -1,5 +1,7 @@
 ##Project 5
 
+My site is available at http://debraallynwarren.github.io/nano_project5/index.html.
+
 This project took a long time and I took a break over the summer because of a crazy work schedule.  It was very challenging because I am a newbie to js and it seemed like it took me a long time to figure things out.  
 
 I made a map of some of the coffee shops in the Boulder, Colorado area.  I drink a lot of coffee, Boulder is an interesting place and I work in Boulder.  I used a lot of different resources and tried to keep track of everything.  I'm sure that I missed some, but the ones below were very helpful and I wouldn't have been able to do the project without them.  
