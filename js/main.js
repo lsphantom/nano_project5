@@ -61,8 +61,7 @@ for (var i = 0; i < locations.length; i++) {
         return function() {
             infowindow.setContent(locations[i][0]);
             infowindow.open(map, marker);
-             //Change the marker icon when clicked
-             //http://jsfiddle.net/bryan_weaver/scSMr/ - code to change marker
+             //Change the marker icon when clicked - added per review
         marker.setIcon('https://www.google.com/mapfiles/marker_black.png');
         }
     })(marker, i));
