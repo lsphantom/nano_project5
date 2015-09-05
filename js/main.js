@@ -1,11 +1,11 @@
 //Model
 // Define your locations with GoogleMaps: HTML content for the info window, latitude, longitude
 var locations = [
-    ['<h4>The Laughing Goat Coffeehouse</h4>', 40.019604, -105.273141],
-    ['<h4>Ozo Cafe</h4>', 40.014190, -105.294955],
-    ['<h4>Espresso Roma</h4>', 40.007397, -105.276331],
-    ['<h4>Trident Booksellers and Cafe</h4>', 40.016968, -105.282887],
-    ['<h4>Red Rock Cafe</h4>', 40.034895, -105.260033]
+    ['<h4>The Laughing Goat Coffeehouse</h4><p>1998 Pleasant St, Boulder</p><p> Modern coffeehouse serving organic brews</p>', 40.019604, -105.273141],
+    ['<h4>Ozo Coffee Company</h4><p>1015 Pearl St, Boulder</p><p>Homey daytime cafe with light fare</p>', 40.014190, -105.294955],
+    ['<h4>Espresso Roma</h4><p>1101 13th St, Boulder</p><p>The coffee is good and the atmosphere is psychedelic!</p>', 40.007397, -105.276331],
+    ['<h4>Trident Booksellers and Cafe</h4><p> 940 Pearl St, Boulder</p><p>Local bookstore-cafe with outdoor seating, plus readings, live concerts & plays</p>', 40.016968, -105.282887],
+    ['<h4>Red Rock Cafe</h4><p> 3325 28th St, Boulder</p><p>Easygoing hangout offering espresso drinks, tea, baked goods, sandwiches & free Wi-Fi.</p>', 40.034895, -105.260033]
 ];
 //Defines Open Weather Map info 
 function b() {
@@ -28,8 +28,8 @@ var icons = [
     iconURLPrefix + 'green-dot.png',
     iconURLPrefix + 'blue-dot.png',
     iconURLPrefix + 'orange-dot.png',
-    iconURLPrefix + 'yellow-dot.png'
-]
+    iconURLPrefix + 'yellow-dot.png',
+    ]
 var iconsLength = icons.length;
 var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 13,
@@ -61,6 +61,9 @@ for (var i = 0; i < locations.length; i++) {
         return function() {
             infowindow.setContent(locations[i][0]);
             infowindow.open(map, marker);
+             //Change the marker icon when clicked
+             //http://jsfiddle.net/bryan_weaver/scSMr/ - code to change marker
+        marker.setIcon('https://www.google.com/mapfiles/marker_black.png');
         }
     })(marker, i));
     iconCounter++;
@@ -71,15 +74,19 @@ for (var i = 0; i < locations.length; i++) {
 }
 $(function() {
     var shops = [{
-        name: "Red Rock Cafe"
+        name: "Red Rock Cafe",
+        }, {
+        name: "The Laughing Goat Coffeehouse",
+        }, {
+        name: "Trident Booksellers and Cafe",
+        
+
     }, {
-        name: "The Laughing Goat Coffeehouse"
+        name: "Expresso Roma",
+        
     }, {
-        name: "Trident Booksellers and Cafe"
-    }, {
-        name: "Expresso Roma"
-    }, {
-        name: "Ozo Cafe"
+        name: "Ozo Coffee Company",
+        
     }, ];
     var viewModel = {
         shops: ko.observableArray(shops),
