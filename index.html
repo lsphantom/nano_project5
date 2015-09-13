@@ -15,19 +15,32 @@
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.tmpl.min.js"></script>
          <meta name="viewport" content="width=device-width">
+        <script>
+        if (typeof google !== 'undefined' && typeof google.maps !== 'undefined') {
+        console.log('Yeah!');
+  } else {
+    console.log("Error loading Google Maps API");
+    alert('There was an error loading Google Maps. Check your internet connection.');
+    
+};
+
+    </script>
     </head>
     <body>
         <div id="container">
             <div id="map">
+           
             </div>
 
             <div id="boulder">
+            
                 <h1>
                     Boulder Temperature
                 </h1>
             </div>
 
             <div id="weather">
+            
                 <button onclick="b()">Current Weather</button>
             </div>
 
@@ -43,7 +56,7 @@
             </div>
             <script id="coffee" type="text/html">
             <li>
-            <strong data-bind="text: name"></strong> 
+            <a href="#" data-bind="text: name, click: showMarker.bind($data,'1')"></a>
             </li>
             </script>
         </div>

@@ -7,6 +7,9 @@ Changes made after first review
 2. I also added more information about the different locations on the map.
 
 I used the resource http://jsfiddle.net/bryan_weaver/scSMr/ - code to change marker to help me change the color of my map icon. 
+http://stackoverflow.com/questions/2604976/javascript-how-to-display-script-errors-in-a-popup-alert - alert message
+https://www.gavick.com/blog/detect-offline-browser - offline.js blog
+http://stackoverflow.com/questions/3059044/google-maps-js-api-v3-simple-multiple-marker-example - made markers one color
 
 
 **********
